@@ -1,0 +1,107 @@
+:root {
+  --bg-color: #2f2d2d;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  color: #eee;
+  display: grid;
+  place-content: center;
+}
+
+.selects {
+  margin: 2rem 0 4rem 0;
+}
+.user,
+.selects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  place-content: center;
+}
+
+.vs{
+  margin-top: 3.5rem;
+}
+
+.square {
+  background-color: var(--bg-color);
+  padding: 1.2rem;
+  margin: 4px;
+  border: dashed 3px white;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  font-size: 40px;
+}
+
+.square.user-option{
+  user-select: none;
+}
+.square.user-option:hover {
+  animation: test 0.1s forwards;
+  background-color: #464444;
+  cursor: pointer;
+}
+@keyframes test {
+  100% {
+    font-size: 50px;
+  }
+}
+
+.square.user-select,
+.square.bot-select {
+  user-select: none;
+  border-style: solid;
+  cursor: default;
+}
+.square.user-select {
+  border-color: rgb(45, 23, 210);
+}
+.square.bot-select {
+  border-color: rgb(251, 4, 4);
+}
+
+.user-container,
+.bot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.points {
+  height: 40px;
+  overflow: hidden;
+  font-size: 35px;
+}
+
+.win-modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.restart{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* Modal */
+.btn-restart{
+  background-color: #6d6dee;
+  color: #eee;
+  font-size: 16px;
+}
+.btn-restart:focus{
+  outline: none;
+}
+.btn-restart:hover{
+  background-color: #4e4ec4;
+}
